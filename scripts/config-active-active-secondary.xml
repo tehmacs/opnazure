@@ -411,7 +411,7 @@
       <log>1</log>
       <quick>1</quick>
       <source>
-        <address>WindowsVMSubnet</address>
+        <address>AzureNetworks</address>
       </source>
       <destination>
         <network>lanip</network>
@@ -437,7 +437,7 @@
       <log>1</log>
       <quick>1</quick>
       <source>
-        <address>WindowsVMSubnet</address>
+        <address>AzureNetworks</address>
       </source>
       <destination>
         <any>1</any>
@@ -666,7 +666,7 @@
         <aliases>
           <alias uuid="637063a6-909d-4544-b2ac-c883a9ea97e4">
             <enabled>1</enabled>
-            <name>WindowsVMSubnet</name>
+            <name>AzureNetworks</name>
             <type>network</type>
             <proto/>
             <counters>0</counters>
@@ -726,7 +726,7 @@
       </rule>
       <rule>
         <source>
-          <network>WindowsVMSubnet</network>
+          <network>AzureNetworks</network>
         </source>
         <destination>
           <any>1</any>
