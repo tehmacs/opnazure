@@ -9,6 +9,7 @@
 # $6 = Windows-VM-Subnet subnet prefix - used to route/nat allow internet access from Windows Management VM
 # $7 = ELB VIP Address
 # $8 = Private IP Secondary Server
+# $9 = Onpremise VM Subnet prefix - used to allow access from Onpremise network to the OPNsense Firewall
 
 # Check if Primary or Secondary Server to setup Firewal Sync
 # Note: Firewall Sync should only be setup in the Primary Server
@@ -37,6 +38,7 @@ elif [ "$4" = "TwoNics" ]; then
     gwip=$(python get_nic_gw.py $5)
     sed -i "" "s/yyy.yyy.yyy.yyy/$gwip/" config.xml
     sed -i "" "s_zzz.zzz.zzz.zzz_$6_" config.xml
+    sed -i "" "s_ttt.ttt.ttt.ttt_$9_" config.xml
     cp config.xml /usr/local/etc/config.xml
 fi
 
@@ -70,6 +72,7 @@ sh ./opnsense-bootstrap.sh.in -y -r "$2"
 fetch https://github.com/Azure/WALinuxAgent/archive/refs/tags/v$3.tar.gz
 tar -xvzf v$3.tar.gz
 cd WALinuxAgent-$3/
+python3 -m ensurepip --upgrade
 python3 setup.py install --register-service --lnx-distro=freebsd --force
 cd ..
 
