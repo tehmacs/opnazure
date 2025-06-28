@@ -406,12 +406,12 @@
       <interface>lan</interface>
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
-      <descr>Allow Firewall Management Windows-VM-Subnet</descr>
+      <descr>Allow Firewall Management</descr>
       <direction>in</direction>
       <log>1</log>
       <quick>1</quick>
       <source>
-        <address>AzureNetworks</address>
+        <address>AzureNetworks,ChezTre</address>
       </source>
       <destination>
         <network>lanip</network>
@@ -432,7 +432,7 @@
       <interface>lan</interface>
       <ipprotocol>inet</ipprotocol>
       <statetype>keep state</statetype>
-      <descr>Allow Windows-VM-Subnet Internet Access</descr>
+      <descr>Allow Internet Access</descr>
       <direction>in</direction>
       <log>1</log>
       <quick>1</quick>
@@ -674,6 +674,16 @@
             <content>zzz.zzz.zzz.zzz</content>
             <description/>
           </alias>
+        <alias uuid="4b41f451-1d92-4466-b7c0-4ff250e290a3">
+            <enabled>1</enabled>
+            <name>ChezTre</name>
+            <type>network</type>
+            <proto/>
+            <counters>0</counters>
+            <updatefreq/>
+            <content>ttt.ttt.ttt.ttt</content>
+            <description/>
+          </alias>
         </aliases>
       </Alias>
     </Firewall>
@@ -731,7 +741,7 @@
         <destination>
           <any>1</any>
         </destination>
-        <descr>NAT Windows-VM-Subnet</descr>
+        <descr>NAT Azure Networks</descr>
         <category/>
         <interface>wan</interface>
         <tag/>

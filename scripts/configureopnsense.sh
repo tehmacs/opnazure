@@ -70,6 +70,7 @@ sh ./opnsense-bootstrap.sh.in -y -r "$2"
 fetch https://github.com/Azure/WALinuxAgent/archive/refs/tags/v$3.tar.gz
 tar -xvzf v$3.tar.gz
 cd WALinuxAgent-$3/
+python3 -m ensurepip --upgrade
 python3 setup.py install --register-service --lnx-distro=freebsd --force
 cd ..
 
