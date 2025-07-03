@@ -778,4 +778,24 @@
       <monitor_disable>1</monitor_disable>
     </gateway_item>
   </gateways>
+  <staticroutes version="1.0.0">
+    <route uuid="f7692d58-0442-4b35-b0e8-7bc607364d01">
+      <network>172.16.0.0/12</network>
+      <gateway>LAN_GW</gateway>
+      <descr/>
+      <disabled>0</disabled>
+    </route>
+    <route uuid="a2167153-f4dc-452a-b27e-73e3e1dd5356">
+      <network>192.168.0.0/16</network>
+      <gateway>LAN_GW</gateway>
+      <descr/>
+      <disabled>0</disabled>
+    </route>
+    <route uuid="cc661f18-025c-49bf-a718-9fe3ea4bf86b">
+      <network>10.0.0.0/8</network>
+      <gateway>LAN_GW</gateway>
+      <descr/>
+      <disabled>0</disabled>
+    </route>
+  </staticroutes>
 </opnsense>
